@@ -1,0 +1,46 @@
+```yaml
+historické_kulturní_entity:
+  - osoby:
+      - Bedřich Hrozný
+  - národy:
+      - Sumerové
+      - Egypťané
+      - Řekové
+      - Římané
+      - Germáni
+      - Keltové
+      - Vikingové
+      - Galové
+      - Slované
+  - oblasti:
+      - Mezopotámie
+      - Starověký Egypt
+      - Britské ostrovy
+      - Severní Evropa
+      - Středozemí
+      - Česká republika
+      - Plzeň
+  - období:
+      - před více než 4000 lety (Mezopotámie)
+      - 13000 let zpět (Izrael)
+      - 4. století př. n. l. (Keltský kmen Bójů)
+      - 3. století našeho letopočtu (příchod Slovanů)
+      - 19. století (industrializace pivovarnictví)
+      - 1842 (vznik plzeňského ležáku)
+      - 2008 (UNESCO zapsání české pivní kultury)
+  - techniky:
+      - kvašením
+      - vymrazování piva (Vikingové)
+      - spodní kvašení
+  - pojmy:
+      - kaš (sumerské pivo)
+      - plzeňský ležák
+      - česká pivní kultura
+  - vynálezy:
+      - metoda vymrazování piva (Vikingové)
+  - pivovary:
+      - žádné konkrétní zmínky
+  - události:
+      - rozluštění chetitského písma (1913)
+      - zápis české pivní kultury na seznam UNESCO (2008)
+```
