@@ -1,6 +1,0 @@
-V zadání dostanete kratší text (do 1000 tokenů). Vylaďte prompty tak, abyste získali:
-Nadpis textu a jeho shrnutí textu.
-Extrakce entit – o jakých se tam mluví značkách, místech a ingrediencích a výstup udělejte ve formátu YAML.
-Vytvořte z textu test se třemi otázkami a odpověďmi A,B,C,D kdy jedna je správná.
-Vygenerujte strukturu prezentace na 5 slidů.
-Doptejte se na nějakou informaci z textu.
