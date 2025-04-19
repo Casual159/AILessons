@@ -1,10 +1,13 @@
-import gradio as gr
+import os
 import sys
+import gradio as gr
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from chat_backend import (
     send_message,
     extract_animal_topic,
     get_animal_info,
-    last_animal
+    get_active_animal,  # 🔧 přidáno kvůli chybějícímu importu
+    get_animal_data
 )
 
 def shutdown_app():
@@ -16,14 +19,12 @@ def chat(user_input, history, current_img, current_desc):
     history.append({"role": "user", "content": user_input})
     history.append({"role": "assistant", "content": reply})
 
-    zvire = extract_animal_topic(user_input)
+    zvire = get_active_animal(user_input)
 
     if not zvire:
-        # GPT zatím neurčilo nové zvíře → zachovej aktuální obrázek a popis
         return "", history, gr.update(value=current_img, visible=bool(current_img)), gr.update(value=current_desc, visible=bool(current_desc)), current_img, current_desc
 
-    info = get_animal_info(zvire)
-    last_animal["zvíře"] = zvire
+    info = get_animal_data()
 
     if info:
         img = info["image"]
@@ -59,4 +60,4 @@ with gr.Blocks() as demo:
     clear.click(lambda: [], None, chatbot)
     shutdown.click(fn=shutdown_app)
 
-demo.launch()
+demo.launch(server_port=7860)

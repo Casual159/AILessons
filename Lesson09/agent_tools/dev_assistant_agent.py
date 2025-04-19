@@ -73,3 +73,20 @@ def navrh_dalsiho_kroku():
     if not projekt["nasazeno"]:
         return {"navrh": "Zvaž nasazení API na Huggingface nebo Railway."}
     return {"navrh": "Vše vypadá dobře. Můžeš testovat agenta."}
+
+@app.get("/code_review")
+def code_review():
+    if not projekt["soubory"]:
+        return {"review": "Nejsou načtené žádné soubory. Spusť nejdříve --check."}
+    
+    podezrele = [s for s in projekt["soubory"] if "__" in s or "temp" in s or "copy" in s or "backup" in s]
+    chybne_py = [s for s in projekt["soubory"] if s.endswith(".py") and s.startswith("test_") is False and "main" not in s and "app" not in s and "backend" not in s]
+    test_soubory = [s for s in projekt["soubory"] if s.startswith("test_") or "/tests/" in s]
+
+    return {
+        "review": {
+            "podezrele_soubory": podezrele,
+            "chybi_testy": len(test_soubory) == 0,
+            "navrh": "Zvaž přidání smoke testů a pojmenování testovacích souborů prefixem 'test_'."
+        }
+    }
